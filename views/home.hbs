@@ -1,0 +1,22 @@
+<h2>Computer Science Portfolios!</h2>
+{{#if message}}
+<div class="error">{{ message }}</div>
+{{/if}}
+Look at these skilled people! <br>
+</tr>
+{{#if selfUser}}
+   
+   Oh hey thats you!
+   <br>
+   {{selfUser.username}} <a href="/pubs/{{{selfUser.slug}}}">[Articles]</a> <a href="/code/{{{selfUser.slug}}}">[Code]</a>
+  <br>
+  <br>
+{{/if}}
+
+{{# each users}}
+  
+  {{this.username}} <a href="/pubs/{{{this.slug}}}">[Articles]</a> <a href="/code/{{{this.slug}}}">[Code]</a>
+  <br>
+  
+ {{/each}}
+</tr>

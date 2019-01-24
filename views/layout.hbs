@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" href="/css/base.css">
+   <a href="/">Home</a> 
+   {{#if user}}
+   <a href="/pubs/add">Add PDF</a> <a href="/code/add">Add code</a> 
+   {{/if}}
+   {{#unless user}}
+   <a href="/login">Login</a>
+   <a href="/register">Register</a>    
+   {{/unless}}
+   
+</head>
+<body>
+	{{{body}}}
+</body>
+</html>

@@ -1,0 +1,37 @@
+<h2>Add new C code snippet</h2>
+<div id="editor"></div>
+
+<div id="form">
+<form method="POST" action="" id="myForm">
+	<div class = "hidden" > <textarea name="code" id = "textarea"> ffs this should show up</textarea> </div>
+	<label class="radio-inline"><input type="radio" name="compiler" value="1" checked="checked">HackerEarth Compiler</label>
+	<label class="radio-inline"><input type="radio" name="compiler" value="0">CIMS Compiler (pls dont fork bomb this one at least)</label> <br>
+	<input type="checkbox" name="add" value="add" checked="checked">Submit code to DB as well?<br>
+</form>
+</div>
+<div id = "button">
+<button type="submit"  id="form_submit">Submit</button>
+</div>
+<div id="output">
+{{#if output}}
+Output: <br>
+{{ output }}
+{{/if}}
+</div>
+<script src="/scripts/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="/scripts/mode-c_cpp.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+   var editor = ace.edit("editor");
+	var CScriptMode = ace.require("ace/mode/c_cpp").Mode;
+	editor.session.setMode(new CScriptMode());
+	
+	document.getElementById('form_submit').addEventListener("click", function(){
+		textarea = document.getElementById('textarea')
+		console.log(textarea.value)
+		textarea.value = editor.getValue()
+		console.log(textarea.value)
+		console.log(editor.getValue())
+		document.getElementById("myForm").submit();
+	})
+</script>

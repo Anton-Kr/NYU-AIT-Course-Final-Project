@@ -1,0 +1,13 @@
+<h2>Code Snippets</h2>
+{{#if message}}
+<div class="error">{{ message }}</div>
+{{/if}}
+</tr>
+{{# each code}}
+  <h2>{{{this.author}}}</h2><br>
+  
+  Code: {{{this.code}}} <br>
+  Output {{{this.output}}} <br>
+  
+ {{/each}}
+</tr>
